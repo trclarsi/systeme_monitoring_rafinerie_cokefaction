@@ -67,15 +67,14 @@ Ce projet simule un environnement industriel de raffinerie avec génération de 
 7. **Lancer le traitement Spark**
    ```bash
    spark-submit \
+   --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0,org.postgresql:postgresql:42.6.0 \
+   /app/traitement_kpi.py
    ```
-  ```bash
---packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0,org.postgresql:postgresql:42.6.0 \
-  /app/traitement_kpi.py
-   ```
+
 si erreur effacer les  checkpoint avec
-    ```bash 
+  ```bash 
 rm -rf /app/data/checkpoint_* 
-    ```
+  ```
     Ensuite ressayez
 
 8. **Accéder à Grafana**
